@@ -5,9 +5,16 @@
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/YOUR_GITHUB_USER_NAME/@sassy-js/vanilla",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kashan-ahmad/sassy.git"
+  },
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "utilities",
+    "javascript"
+  ],
   "scripts": {
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",
@@ -48,6 +55,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "ava": "^3.12.1",
+    "axios": "^1.2.2",
     "codecov": "^3.5.0",
     "cspell": "^4.1.0",
     "cz-conventional-changelog": "^3.3.0",
