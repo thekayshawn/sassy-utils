@@ -5,7 +5,7 @@ export type HttpServiceError = {
   readonly message: string;
 };
 
-export type BoolBacks<T> = {
+export type BoolBacks<T = unknown> = {
   readonly onSuccess: (data: T) => unknown;
   readonly onFailure: (error: HttpServiceError) => unknown;
 };

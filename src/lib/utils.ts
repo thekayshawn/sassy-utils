@@ -20,7 +20,7 @@ export const getDiscounted = (value: number, discount: number) =>
  *
  * @return {number} The original value without the discount.
  */
-export const removeDiscount = (value: number, discount: number): number =>
+export const getWithoutDiscount = (value: number, discount: number): number =>
   value / (1 - discount);
 
 /**
@@ -34,7 +34,7 @@ export const removeDiscount = (value: number, discount: number): number =>
  *
  * @param {number}.
  */
-export const removeDiscountPercentage = (value: number, discount: number) =>
+export const getWithoutPercentDiscount = (value: number, discount: number) =>
   value / (1 - discount / 100);
 
 /**
@@ -52,17 +52,17 @@ export const isValidObject = (entity: unknown): boolean =>
  * Capitalize a word's first letter.
  * @returns {string}
  */
-export const capitalizeWord = (word: string): string =>
+export const getCapitalizedWord = (word: string): string =>
   word.charAt(0).toUpperCase() + word.slice(1);
 
 /**
  * Capitalize all words of a sentence or a clause.
  * @returns {string}
  */
-export const capitalize = (clause: string): string => {
+export const getCapitalized = (clause: string): string => {
   return clause
     .split(' ')
-    .map((word) => capitalizeWord(word))
+    .map((word) => getCapitalizedWord(word))
     .join(' ');
 };
 
@@ -111,7 +111,7 @@ export function getFormDataFromObject(foo: Record<string, string>): FormData {
  * Converts a string into a kebab-cased slug.
  * @returns {string}
  */
-export const slugifyString = (string: string): string => {
+export const getSlugified = (string: string): string => {
   return string.toLowerCase().trim().replaceAll(' ', '-');
 };
 
@@ -144,7 +144,7 @@ export function downloadResource(url: string, name = 'sassy-file') {
  *
  * @returns {HTMLHeadingTag | "div"}
  */
-export function getSemanticHeading(currentHeading = 'div'): string {
+export function getSemanticHeadingTag(currentHeading = 'div'): string {
   const headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
   // Fallback for a wrong element.
