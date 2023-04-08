@@ -1,3 +1,3 @@
-export * from './utils';
+export * from './utils'
 
-export { default as SassyError } from './SassyError';
+export { default as SassyError } from './SassyError'

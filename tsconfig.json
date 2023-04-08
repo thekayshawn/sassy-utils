@@ -4,8 +4,9 @@
     "module": "CommonJS",
     "outDir": "dist",
     "strict": true,
-    "esModuleInterop": true,
     "sourceMap": true,
+    "declaration": true,
+    "esModuleInterop": true,
     "lib": ["ESNext", "dom"],
     "types": ["node"]
   },

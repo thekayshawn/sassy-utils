@@ -8,5 +8,6 @@
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "rules": {}
+  "rules": {},
+  "ignorePatterns": ["dist"]
 }
