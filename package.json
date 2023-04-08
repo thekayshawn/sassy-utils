@@ -21,9 +21,9 @@
     "build": "npm format && tsc",
     "prepublish": "npm build",
     "postversion": "git push && git push --tags",
-    "publish:major": "npm version && npm publish",
+    "publish": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "publish:patch": "npm version patch && npm publish"
+    "publish:major": "npm version && npm publish"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
