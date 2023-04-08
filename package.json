@@ -1,6 +1,6 @@
 {
   "name": "@sassy-js/vanilla",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "JavaScript just got some sass. Sassy.js is a set of sassy tools, utilities, methods, and many more! Sassy.js makes it easy to write cleaner, more readable code with fewer bugs and less boilerplate.",
   "main": "src/index.ts",
   "keywords": [],
