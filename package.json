@@ -20,7 +20,7 @@
     "format": "npm run lint:fix && prettier --write .",
     "build": "npm run format && tsc",
     "release:migrate": "cp package.json LICENSE README.md dist && cd dist",
-    "release:version": "npm run version patch && npm run release:migrate",
+    "release:version": "npm version patch && npm run release:migrate",
     "release:prepare": "npm run build && npm run release:version",
     "release:tags": "cd .. && git push && git push --tags",
     "release": "npm run release:prepare && npm publish --access=public && npm run release:tags"
