@@ -21,7 +21,8 @@
     "build": "npm run format && tsc",
     "prepublish": "npm run build",
     "postversion": "git push && git push --tags",
-    "publish": "npm version patch && npm publish",
+    "publish": "npm publish --access=public",
+    "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
     "publish:major": "npm version && npm publish"
   },
@@ -36,6 +37,8 @@
     "typescript": "^5.0.4"
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE",
+    "README.md"
   ]
 }
