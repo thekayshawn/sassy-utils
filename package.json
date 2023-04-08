@@ -17,13 +17,13 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "pnpm lint:fix && prettier --write .",
-    "build": "pnpm format && tsc",
-    "prepublish": "pnpm build",
+    "format": "npm lint:fix && prettier --write .",
+    "build": "npm format && tsc",
+    "prepublish": "npm build",
     "postversion": "git push && git push --tags",
-    "publish:major": "pnpm version && pnpm publish",
-    "publish:minor": "pnpm version minor && pnpm publish",
-    "publish:patch": "pnpm version patch && pnpm publish"
+    "publish:major": "npm version && npm publish",
+    "publish:minor": "npm version minor && npm publish",
+    "publish:patch": "npm version patch && npm publish"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
