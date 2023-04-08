@@ -17,9 +17,9 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "npm lint:fix && prettier --write .",
-    "build": "npm format && tsc",
-    "prepublish": "npm build",
+    "format": "npm run lint:fix && prettier --write .",
+    "build": "npm run format && tsc",
+    "prepublish": "npm run build",
     "postversion": "git push && git push --tags",
     "publish": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
