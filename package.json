@@ -19,8 +19,8 @@
     "lint:fix": "eslint . --fix",
     "format": "npm run lint:fix && prettier --write .",
     "build": "npm run format && tsc",
-    "release:migrate": "cp package.json LICENSE README.md dist",
-    "release:version": "npm version patch && npm run release:migrate",
+    "release:migrate": "cp dist package.json LICENSE README.md CONTRIBUTING.md",
+    "release:version": "npx changeset version && npm run release:migrate",
     "release:prepare": "npm run build && npm run release:version",
     "release:tags": "git push && git push --tags",
     "release": "npm run release:prepare && cd dist && npm publish --access=public && cd .. && npm run release:tags"
