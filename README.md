@@ -15,11 +15,11 @@ npm install @sassy-js/vanilla
 Here's an example of how to use Sassy.js in your project:
 
 ```javascript
-import { sassyMethod } from 'sass-js'
+import { sassyMethod } from "sass-js";
 
-const result = sassyMethod('Hello, world!')
+const result = sassyMethod("Hello, world!");
 
-console.log(result) // Logs "Hello, world! So sassy!"
+console.log(result); // Logs "Hello, world! So sassy!"
 ```
 
 ## Features

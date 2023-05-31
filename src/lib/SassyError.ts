@@ -1,11 +1,11 @@
 export default class SassyError extends Error {
   constructor(message: string) {
-    super(`SassyError: ${message}`)
+    super(`SassyError: ${message}`);
 
-    Object.setPrototypeOf(this, SassyError.prototype)
+    Object.setPrototypeOf(this, SassyError.prototype);
   }
 
   static getPrototype(): string {
-    return `SassyError:`
+    return `SassyError:`;
   }
 }
