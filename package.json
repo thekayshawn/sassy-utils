@@ -26,6 +26,7 @@
     "release": "npm run release:prepare && cd dist && npm publish --access=public && cd .. && npm run release:tags"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
