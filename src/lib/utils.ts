@@ -1,4 +1,4 @@
-import SassyError from "./SassyError";
+import SassyError from "./SassyError"
 
 /**
  * Calculates the discounted value from a number based on the passed discount.
@@ -7,7 +7,7 @@ import SassyError from "./SassyError";
  * @param {number} discount The percentage of discount to apply. 10 for 10%
  */
 export const getDiscounted = (value: number, discount: number) =>
-  value - (value * discount) / 100;
+  value - (value * discount) / 100
 
 /**
  * Remove the discount from a value.
@@ -21,7 +21,7 @@ export const getDiscounted = (value: number, discount: number) =>
  * @return {number} The original value without the discount.
  */
 export const getWithoutDiscount = (value: number, discount: number): number =>
-  value / (1 - discount);
+  value / (1 - discount)
 
 /**
  * Remove the percentage-discount from a value.
@@ -35,7 +35,7 @@ export const getWithoutDiscount = (value: number, discount: number): number =>
  * @param {number}.
  */
 export const getWithoutPercentDiscount = (value: number, discount: number) =>
-  value / (1 - discount / 100);
+  value / (1 - discount / 100)
 
 /**
  * Whether an entity is an object and has at least one entry.
@@ -46,14 +46,14 @@ export const getWithoutPercentDiscount = (value: number, discount: number) =>
 export const isValidObject = (entity: unknown): boolean =>
   !!entity &&
   Object.keys(entity).length > 0 &&
-  Object.getPrototypeOf(entity) === Object.prototype;
+  Object.getPrototypeOf(entity) === Object.prototype
 
 /**
  * Capitalize a word's first letter.
  * @returns {string}
  */
 export const getCapitalizedWord = (word: string): string =>
-  word.charAt(0).toUpperCase() + word.slice(1);
+  word.charAt(0).toUpperCase() + word.slice(1)
 
 /**
  * Capitalize all words of a sentence or a clause.
@@ -63,11 +63,11 @@ export const getCapitalized = (clause: string): string => {
   return clause
     .split(" ")
     .map((word) => getCapitalizedWord(word))
-    .join(" ");
-};
+    .join(" ")
+}
 
 export const isMobile = () =>
-  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
 /**
  * Checks if an entity is numeric or not, doesn't check it's type.
@@ -77,7 +77,7 @@ export const isMobile = () =>
  * @returns {boolean}
  */
 export const isNumeric = (entity: unknown): boolean =>
-  /^-?\d+$/.test(entity as string);
+  /^-?\d+$/.test(entity as string)
 
 /**
  * Strictly checks if a value is a number or not. Checks it's type as well.
@@ -85,7 +85,7 @@ export const isNumeric = (entity: unknown): boolean =>
  * @returns {boolean}
  */
 export const isStrictlyNumeric = (entity: unknown): boolean =>
-  typeof entity === "number" && isNumeric(entity);
+  typeof entity === "number" && isNumeric(entity)
 
 /**
  * Generates a formData instance based on the key-value
@@ -97,14 +97,14 @@ export function getFormDataFromObject(foo: Record<string, string>): FormData {
   if (!isValidObject(foo)) {
     throw new SassyError(
       "The object passed to getFormDataFromObject wasn't a valid object"
-    );
+    )
   }
 
-  const formData = new FormData();
+  const formData = new FormData()
 
-  Object.entries(foo).forEach(([key, value]) => formData.append(key, value));
+  Object.entries(foo).forEach(([key, value]) => formData.append(key, value))
 
-  return formData;
+  return formData
 }
 
 /**
@@ -112,8 +112,8 @@ export function getFormDataFromObject(foo: Record<string, string>): FormData {
  * @returns {string}
  */
 export const getSlugified = (string: string): string => {
-  return string.toLowerCase().trim().replaceAll(" ", "-");
-};
+  return string.toLowerCase().trim().replaceAll(" ", "-")
+}
 
 /**
  * Download a resource from a URL.
@@ -122,21 +122,21 @@ export function downloadResource(url: string, name = "sassy-file") {
   if (!url) {
     console.warn(
       `${SassyError.getPrototype()} Missing parameter 'url' in downloadResource function!`
-    );
-    return;
+    )
+    return
   }
 
-  const link = document.createElement("a");
+  const link = document.createElement("a")
 
-  link.setAttribute("href", url);
-  link.setAttribute("download", name);
-  link.setAttribute("target", "_blank");
-  link.setAttribute("rel", "noreferrer");
+  link.setAttribute("href", url)
+  link.setAttribute("download", name)
+  link.setAttribute("target", "_blank")
+  link.setAttribute("rel", "noreferrer")
 
-  document.body.appendChild(link);
+  document.body.appendChild(link)
 
-  link.click();
-  link.remove();
+  link.click()
+  link.remove()
 }
 
 /**
@@ -145,16 +145,16 @@ export function downloadResource(url: string, name = "sassy-file") {
  * @returns {HTMLHeadingTag | "div"}
  */
 export function getSemanticHeadingTag(currentHeading = "div"): string {
-  const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
+  const headings = ["h1", "h2", "h3", "h4", "h5", "h6"]
 
   // Fallback for a wrong element.
-  if (!headings.includes(currentHeading)) return currentHeading;
+  if (!headings.includes(currentHeading)) return currentHeading
 
   // A div is what you need if you're already at h6.
-  if (currentHeading === "h6") return "div";
+  if (currentHeading === "h6") return "div"
 
   // The heading next to the current one.
   return headings[
     1 + headings.findIndex((heading) => currentHeading === heading)
-  ];
+  ]
 }
