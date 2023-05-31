@@ -1,6 +1,6 @@
 {
-  "name": "@sassy-js/vanilla",
-  "version": "0.0.12",
+  "name": "@sassy-js/utils",
+  "version": "1.0.0",
   "description": "JavaScript just got some sass. Sassy.js is a set of sassy tools, utilities, methods, and many more! Sassy.js makes it easy to write cleaner, more readable code with fewer bugs and less boilerplate.",
   "main": "src/index.ts",
   "keywords": [],
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kashan-ahmad/sassy-vanilla"
+    "url": "https://github.com/kashan-ahmad/sassy-utils"
   },
   "license": "MIT",
   "scripts": {
@@ -25,12 +25,14 @@
     "release:tags": "git push && git push --tags",
     "release": "npm run release:prepare && cd dist && npm publish --access=public"
   },
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
-    "axios": "^1.4.0",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
