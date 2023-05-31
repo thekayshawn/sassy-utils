@@ -1,6 +1,6 @@
 {
   "name": "@sassy-js/vanilla",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "JavaScript just got some sass. Sassy.js is a set of sassy tools, utilities, methods, and many more! Sassy.js makes it easy to write cleaner, more readable code with fewer bugs and less boilerplate.",
   "main": "src/index.ts",
   "keywords": [],
@@ -19,11 +19,11 @@
     "lint:fix": "eslint . --fix",
     "format": "npm run lint:fix && prettier --write .",
     "build": "npm run format && tsc",
-    "release:migrate": "cp dist package.json LICENSE README.md CONTRIBUTING.md",
+    "release:migrate": "cp package.json LICENSE README.md CONTRIBUTING.md dist",
     "release:version": "npx changeset version && npm run release:migrate",
     "release:prepare": "npm run build && npm run release:version",
     "release:tags": "git push && git push --tags",
-    "release": "npm run release:prepare && cd dist && npm publish --access=public && cd .. && npm run release:tags"
+    "release": "npm run release:prepare && cd dist && npm publish --access=public"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
