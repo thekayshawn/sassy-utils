@@ -18,6 +18,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "npm run lint:fix && prettier --write .",
+    "dev": "tsc -w",
     "build": "npm run format && tsc",
     "release:migrate": "cp package.json LICENSE README.md CONTRIBUTING.md dist",
     "release:version": "npx changeset version && npm run release:migrate",
@@ -29,6 +30,8 @@
     "axios": "^1.4.0"
   },
   "devDependencies": {
+    "@sassy-js/tsconfig": "workspace:*",
+    "@sassy-js/eslint-config": "workspace:*",
     "@changesets/cli": "^2.26.1",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
