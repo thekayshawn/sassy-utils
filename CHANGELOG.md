@@ -1,5 +1,11 @@
 # @sassy-js/vanilla
 
+## 2.0.0
+
+### Major Changes
+
+- 98d4725: Added login and logout functions
+
 ## 1.0.0
 
 ### Major Changes
