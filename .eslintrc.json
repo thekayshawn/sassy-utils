@@ -1,4 +1,4 @@
 {
   "root": true,
-  "plugins": ["@sassy-js/eslint-config"]
+  "extends": ["@sassy-js/eslint-config"]
 }

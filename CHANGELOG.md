@@ -1,5 +1,12 @@
 # @sassy-js/vanilla
 
+## 2.1.0
+
+### Minor Changes
+
+- b349045: minor release bump
+- cdef726: updated publish config of all projects
+
 ## 2.0.0
 
 ### Major Changes

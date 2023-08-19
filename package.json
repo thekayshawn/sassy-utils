@@ -1,13 +1,12 @@
 {
   "name": "@sassy-js/utils",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "JavaScript just got some sass. Sassy.js is a set of sassy tools, utilities, methods, and many more! Sassy.js makes it easy to write cleaner, more readable code with fewer bugs and less boilerplate.",
-  "main": "src/index.ts",
   "keywords": [],
   "author": {
     "name": "Kashan Ahmad",
     "url": "https://kashanahmad.me",
-    "email": "kashan.aech.620@gmail.com"
+    "email": "hi@kashanahmad.me"
   },
   "repository": {
     "type": "git",
@@ -19,7 +18,9 @@
     "lint:fix": "eslint . --fix",
     "format": "npm run lint:fix && prettier --write .",
     "dev": "tsc -w",
-    "build": "npm run format && tsc",
+    "build": "tsc",
+    "commit": "git add .",
+    "push": "git push --follow-tags",
     "release:migrate": "cp package.json LICENSE README.md CONTRIBUTING.md dist",
     "release:version": "npx changeset version && npm run release:migrate",
     "release:prepare": "npm run build && npm run release:version",
@@ -42,5 +43,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.7",
     "typescript": "^5.0.4"
-  }
+  },
+  "main": "src/index.ts"
 }
